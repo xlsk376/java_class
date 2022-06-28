@@ -25,6 +25,46 @@ public class 배열7_알고리즘_인풋추가삭제2 {
 		int arr[] = {0,0,0};
 		int count = 0;
 		int input[][] = {{10,20},{30,10},{30,30}}; // input[i][0] == 추가 / input[i][1] == 삭제
+		// input[0][0] input[0][1] input[1][0] input[1][1] input[2][0] input[2][1]
+		for(int i = 0; i < input.length; i++) {
+			for(int j = 0; j < input[i].length; j++) {
+				if(j % 2 == 0) {
+					boolean check = false;
+					for(int k = 0; k < arr.length; k++) {
+						if(input[i][j] == arr[k]) {
+							check = true;
+						}
+					}
+					if(check == false) {
+						arr[count] = input[i][j];
+						count += 1;
+						System.out.println(Arrays.toString(arr));
+					}else{
+						System.out.println("중복됩니다.");
+					}
+				}else {
+					//System.out.println(i + " " + j);
+					boolean check = false;
+					for(int k = 0; k < arr.length; k++) {
+						if(input[i][j] == arr[k]) {
+							check = true;
+						}
+					}
+					if(check == false) {
+						System.out.println("삭제할 값이 없습니다.");
+					}else{
+						for(int k = 0; k < count-1; k++) {
+							arr[k] = arr[k+1];
+						}
+						arr[count-1] = 0;
+						count -= 1;
+						System.out.println(Arrays.toString(arr));
+					}
+				}
+				//System.out.println(i + " " + j);
+			}
+			
+		}
 		
 		
 
