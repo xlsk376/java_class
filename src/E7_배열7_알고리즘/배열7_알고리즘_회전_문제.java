@@ -1,5 +1,6 @@
 package E7_배열7_알고리즘;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class 배열7_알고리즘_회전_문제 {
@@ -35,10 +36,35 @@ public class 배열7_알고리즘_회전_문제 {
 			Scanner scan = new Scanner(System.in);
 			
 			while(true) {
-				System.out.println("[1.left_turn] [2.right_turn]");
-				int n = scan.nextInt();
 				for(int i = 0; i < block.length; i++) {
-					
+					System.out.println(Arrays.toString(block[i]));
+				}
+				System.out.println("[1.left_turn] [2.right_turn][0.break]");
+				int n = scan.nextInt();
+				int temp[][] = new int[4][4];
+				if(n == 1) {
+					for(int i = 0; i < block.length; i++) {
+						int y = block.length-1;
+						for(int j = 0; j < block.length; j++) {
+							temp[y][i] = block[i][j];
+							//System.out.println(y + " " + i);
+							y -= 1;
+						}
+					}
+					block = temp;
+				}else if(n == 2) {
+					int x = block.length-1;
+					for(int i = 0; i < block.length; i++) {
+						System.out.println(x);
+						for(int j = 0; j < block.length; j++) {
+							temp[j][x] = block[i][j];
+							//System.out.println(j + " " + x);
+						}
+						x -= 1;
+					}
+					block = temp;
+				}else if(n == 0) {
+					break;
 				}
 				
 			}
