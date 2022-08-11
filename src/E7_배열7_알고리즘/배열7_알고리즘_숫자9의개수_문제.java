@@ -41,7 +41,7 @@ public class 배열7_알고리즘_숫자9의개수_문제 {
 									continue;
 								}
 								System.out.print("["+k + " " + h+"]");
-								if(mine[k][h]==9) {
+								if(mine[k][h] == 9) {
 									count += 1;
 								}
 							}
